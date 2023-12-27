@@ -412,17 +412,17 @@ DELIMITER ;
 
 import mysql.connector as connector
 
-# Task One: Connect to the database
+### Task One: Connect to the database
 connection = connector.connect(user="your_username", password="your_password", database="your_database_name")
 cursor = connection.cursor()
 
-# Task Two: Show all tables in the database
+### Task Two: Show all tables in the database
 show_tables_query = "SHOW TABLES"
 cursor.execute(show_tables_query)
 tables = cursor.fetchall()
 print("Tables in the database:", tables)
 
-# Task Three: Query with table JOIN
+### Task Three: Query with table JOIN
 query = """
     SELECT Customers.FullName, Customers.ContactDetails, Orders.TotalCost
     FROM Customers
@@ -433,12 +433,12 @@ query = """
 cursor.execute(query)
 results = cursor.fetchall()
 
-# Displaying the results
+### Displaying the results
 print("\nResults of the query:")
 for result in results:
     print(result)
 
-# Close the cursor and connection
+### Close the cursor and connection
 cursor.close()
 connection.close()
 
